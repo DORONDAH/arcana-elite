@@ -3,8 +3,16 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    /* Hard-wired fallback to ensure it is NEVER pale */
+    --md-sys-color-surface: #050505;
+    --md-sys-color-on-surface: #FFFFFF;
+  }
+
   body {
-    @apply bg-surface text-on-surface min-h-screen antialiased overflow-x-hidden selection:bg-primary/30;
+    background-color: #050505 !important; /* Force Obsidian Base */
+    color: #FFFFFF !important;
+    @apply min-h-screen antialiased overflow-x-hidden;
     font-family: 'Montserrat', sans-serif;
   }
 
